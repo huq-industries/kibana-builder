@@ -14,3 +14,5 @@ clean-artifacts:
 	-rm kibana-artifacts/kibana/target/*
 	-rm kibana-artifacts/x-pack-kibana/build/distributions/*
 
+base-image:
+	sh build-kibana-docker-image.sh ${HUQ_DOCKER_REGISTRY_ORG} ${ELASTIC_VERSION} ${KIBANA_TAG}
