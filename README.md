@@ -26,3 +26,7 @@ This will pull down kibana repo, check out the `HUQ_KIBANA_BRANCH` and build it.
 HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq make base-image
 ```
 
+4. Install plugins
+```bash
+HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq make install-plugin
+```

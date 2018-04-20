@@ -16,3 +16,9 @@ clean-artifacts:
 
 base-image:
 	sh build-kibana-docker-image.sh ${HUQ_DOCKER_REGISTRY_ORG} ${ELASTIC_VERSION} ${KIBANA_TAG}
+
+install-plugin:
+	docker build -f install-plugin.dockerfile -t ${HUQ_DOCKER_REGISTRY_ORG}/kibana:${ELASTIC_VERSION}-${KIBANA_TAG} \
+	--build-arg BASE_IMAGE=${HUQ_DOCKER_REGISTRY_ORG}/kibana \
+	--build-arg BASE_IMAGE_TAG=${ELASTIC_VERSION}-${KIBANA_TAG}-oss .
+	docker push ${HUQ_DOCKER_REGISTRY_ORG}/kibana:${ELASTIC_VERSION}-${KIBANA_TAG}
