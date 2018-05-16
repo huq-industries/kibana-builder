@@ -6,6 +6,7 @@ KIBANA_TAG=$3
 
 git clone https://github.com/elastic/kibana-docker.git
 cd kibana-docker
+git checkout --track origin/6.2
 
 ELASTIC_REGISTRY=quay.io \
 IMAGE_TAG=${HUQ_DOCKER_REGISTRY_ORG}/kibana \
