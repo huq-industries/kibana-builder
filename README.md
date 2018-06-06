@@ -8,7 +8,7 @@ Build kibana from source to a docker image with custom plugins
 
 1. make the build env this hardly changes so we will reuse it
 ```bash
-HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries make build-env
+sudo make HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries build-env
 ```
 or
 ```bash
@@ -17,16 +17,16 @@ docker pull quay.io/huqindustries/kibana:build-env
 
 2. Build the artifact form source
 ```bash
-HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq HUQ_KIBANA_BRANCH=... make artifacts
+sudo make HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq HUQ_KIBANA_BRANCH=... artifacts
 ```
 This will pull down kibana repo, check out the `HUQ_KIBANA_BRANCH` and build it.
 
 3. Build the docker image
 ```bash
-HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq make base-image
+sudo make HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq base-image
 ```
 
 4. Install plugins
 ```bash
-HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq make install-plugin
+sudo make HUQ_DOCKER_REGISTRY_ORG=quay.io/huqindustries ELASTIC_VERSION=6.2.3 KIBANA_TAG=huq install-plugin
 ```
